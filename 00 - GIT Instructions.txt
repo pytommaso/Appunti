@@ -1,0 +1,97 @@
+	CMD
+parent dir   cd ..
+enter dir    cd Documenti
+lista contenuti    ls
+make  mkdir nomedirectory
+remove rmdir nomedirectory
+
+
+
+	GIT
+repo = project
+commit = safe point
+stage = place to put multiple files for commit
+
+
+
+ATOM-GIT
+green = created but not committed
+orange = changed but not committed
+
+
+
+CREATE NEW REPO
+mkdir Myproject
+go in that folder (copy path dal menu a sx in atom)
+git init  per collegarla (e crea la dir .git)
+reload atom
+
+
+
+STAGE FILES cmd ("WE SHOULD BE COMMITTING IN LOGICAL POINTS")
+go in the dir
+git status (to see if files are red -unstaged- or green -staged-)
+git add namefile.extension           put it into stage
+git rm --cached namefile.extension   remove it from stage
+git add .                  add every single modified file in the stage
+
+
+
+COMMIT
+git status     check if the file(s) are in green - staged
+git commit -m "es. fixed bug in haeder/ oppure added style.less file"    messaggio sensato
+git log                 detailed list of commits
+git log --oneline       condensed list of commits
+
+
+
+BACK IN TIME (checkout, revert and reset)
+git checkout af6b84c     checkout read only back at the state of that commit
+git checkout master      come back to the present
+
+git revert ahe77sj  +  :wq     this is the UNDO function: it makes a
+				new commit (default message: revert "original commit
+				message") undoing our commit
+DANGER!!
+git reset af67s8i         distrugge i commit sul branch ma nelle cartelle locali
+				mi rimangono in realtà rimangono tutti i commit
+				distrutti sotto forma di unstaged changes - UTILE PER
+				FONDERE PIù COMMITs IN UNO UNICO
+git reset 5dsgsu6 --hard  QUESTO CANCELLA TUTTO  ! ! ! ! ! ! ! ! !
+
+
+
+	GITHUB
+
+PUSH
+	git remote add origin* + url		per creare un alias dell'URL
+	crea repo su github
+	copia URL
+	git status			per vedere che non ci sia nothing to commit
+	git push + origin* + master		per mandare sul master brach su github
+
+example
+	faccio la modifica, git add., git commit -m "added h1", git push origin* (oppure URL) master
+
+
+
+CLONE...se invece ho una repo remote su github
+	clone, copy URL,
+	cd ..			upper level
+	git clone + URL
+	cd crap-portfolio
+	atom add project folder
+	atom add new file.py, save it
+	git add.
+	git commit -m "added file.py"
+	git remot -v			per vedere se ha degli alias name
+					(e in questo caso li ha perchè l'abbiamo clonata da remoto)
+	git push origin master		inviato !!
+
+
+  -  -  -
+CREATING BRANCHES
+	https://www.youtube.com/watch?v=QV0kVNvkMxc&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=8
+
+COLLABORATING ON GITHUB
+	https://www.youtube.com/watch?v=MnUd31TvBoU&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=11
